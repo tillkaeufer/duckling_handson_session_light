@@ -33,7 +33,7 @@ If you do this you need to unpack your zip file.
 At the end of this step you should have somewhere a folder called 'Ringberg_duckling_session'.
 
 ### Installation
-We will be working in a Python 3 enviroment and need a few python packages.
+We will be working in a Python 3 environment and need a few python packages.
 First, make sure that you have python 3 running.
 Second, go in the terminal to the 'Ringberg_duckling_session' folder and run the following command:
 `python requirements.txt` (ish)
