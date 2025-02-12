@@ -1,4 +1,4 @@
-# Ringberg DuCKLinG session
+# DuCKLinG hands-on session
 
 Below you find the step by step instructions on how to run this session.  
 
@@ -36,7 +36,7 @@ At the end of this step you should have somewhere a folder called 'Ringberg_duck
 We will be working in a Python 3 environment and need a few python packages.
 First, make sure that you have python 3 running.
 Second, go in the terminal to the 'Ringberg_duckling_session' folder and run the following command:
-`python requirements.txt` (ish)
+`python install -rrequirements.txt` 
 
 This should hopefully install a bunch of packages.
 If you have any problems with individual packages...
