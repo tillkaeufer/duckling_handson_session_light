@@ -484,26 +484,26 @@ if sample_all:
 
 
 
-if 'tmax_s' in prior_dict or 'temp_s' in prior_dict:
+if 'tmax_s' in prior_dict or 'temp_s' in prior_dict or 'tmax_s' in fixed_dict or 'temp_s' in fixed_dict:
     use_dust_emis=True
-    if 'tmax_s' in prior_dict:
+    if 'tmax_s' in prior_dict or 'tmax_s' in fixed_dict:
         sur_powerlaw=True
     else:
         sur_powerlaw=False
 else:
     use_dust_emis=False
-if 'tmax_abs' in prior_dict or 'temp_abs' in prior_dict:
+if 'tmax_abs' in prior_dict or 'temp_abs' in prior_dict or 'tmax_abs' in fixed_dict or 'temp_abs' in fixed_dict:
     use_dust_absorp=True
-    if 'tmax_abs' in prior_dict:
+    if 'tmax_abs' in prior_dict or 'tmax_abs' in fixed_dict:
         abs_powerlaw=True
     else:
         abs_powerlaw=False
 else:
     use_dust_absorp=False
-
 use_mol_powerlaw=False
 if 'q_emis' in prior_dict or 'q_emis' in fixed_dict:
     use_mol_powerlaw=True
+  
 # setting up the dictonaries and headers that will be used
 
 

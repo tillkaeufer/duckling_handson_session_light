@@ -341,17 +341,17 @@ if sample_all:
         prior_dict_dust_abs[key]=prior_scaling_abs
 
 
-if 'tmax_s' in prior_dict or 'temp_s' in prior_dict:
+if 'tmax_s' in prior_dict or 'temp_s' in prior_dict or 'tmax_s' in fixed_dict or 'temp_s' in fixed_dict:
     use_dust_emis=True
-    if 'tmax_s' in prior_dict:
+    if 'tmax_s' in prior_dict or 'tmax_s' in fixed_dict:
         sur_powerlaw=True
     else:
         sur_powerlaw=False
 else:
     use_dust_emis=False
-if 'tmax_abs' in prior_dict or 'temp_abs' in prior_dict:
+if 'tmax_abs' in prior_dict or 'temp_abs' in prior_dict or 'tmax_abs' in fixed_dict or 'temp_abs' in fixed_dict:
     use_dust_absorp=True
-    if 'tmax_abs' in prior_dict:
+    if 'tmax_abs' in prior_dict or 'tmax_abs' in fixed_dict:
         abs_powerlaw=True
     else:
         abs_powerlaw=False
@@ -1050,8 +1050,16 @@ if use_ultranest:
         print('frac_remain ')
     except:
         print('frac_remain  not set')
-        frac_remain=0.001
+        frac_remain=0.5
         print('Default is 0.5')  
+    try:
+        dlogz 
+        print('dlogz')
+    except:
+        print('dlogz  not set')
+        dlogz=0.5
+        print('Default is 0.5') 
+        
 
 else:
     try:
