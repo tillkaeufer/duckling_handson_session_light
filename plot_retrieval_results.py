@@ -3145,7 +3145,14 @@ print('Done!!')
 if run_all:
     print('Starting the other plotting routines')
     print('Starting plot_mol_conditions-input.py')
-    os.system(f'python plot_mol_conditions-input.py {input_file}')
+    if reduce_posterior:
+        os.system(f'python plot_mol_conditions-input.py {input_file} reduce_post')
+    else:
+        os.system(f'python plot_mol_conditions-input.py {input_file}')
     print('Starting plot_mol_contributions-input.py ')
-    os.system(f'python plot_mol_contributions-input.py  {input_file}')
+    if reduce_posterior:
+        os.system(f'python plot_mol_contributions-input.py  {input_file} simple')
+
+    else:
+        os.system(f'python plot_mol_contributions-input.py  {input_file}')
 print('Finished!!')

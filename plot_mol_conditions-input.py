@@ -63,6 +63,7 @@ nbins=100
 log_t_first=False
 log_t_second=True
 npoints_per_model=1000
+reduce_posterior=False
 
 # %%
 if __name__ == "__main__":
@@ -97,8 +98,10 @@ if __name__ == "__main__":
                 coldens_range=np.array(literal_eval(arg_list[int(i+1)]),dtype='float64')
             elif argument=='npoints':
                 npoints_per_model=int(arg_list[i+1])  
-            if argument=='close':
+            elif argument=='close':
                 closing=True
+            elif argument=='reduce_post':
+                reduce_posterior=True
                 
 
 
@@ -174,7 +177,10 @@ print('----------------------------')
 
 
 
-
+if reduce_posterior:
+    reduce_str='_reduced'
+else:
+    reduce_str=''
 #sleep(5)
 
 
@@ -187,7 +193,7 @@ print('Loading posterior...')
 
 folder=bayesian_folder+subfold
 prefix_fig=folder+f'/figures/test_{run_number}'
-list_complete_post=glob.glob(folder+f'*_{run_number}complete_posterior.npy')
+list_complete_post=glob.glob(folder+f'*_{run_number}complete_posterior{reduce_str}.npy')
 
 list_complete_post.sort()
 
@@ -423,7 +429,7 @@ for mol in mol_list:
         tot_t.append(t_in)
         tot_t.append(t_out)
 if len(tot_r)==0:
-    print('No i emits over a temperature powerlaw.')
+    print('No molecule emits over a temperature powerlaw.')
     print('Therefore, we cannot print the radial structure')
 else:
     flat_r=[]
