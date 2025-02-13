@@ -6,7 +6,7 @@ During this project you will fit a mock observation that was created by DuCKLinG
 
 The goal is to answer a few questions during the process.
 
-The quiz can be accessed using the following link: https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+The quiz can be accessed [here](https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton){:target="_blank"}
 
 At different steps during this tutorial, I'll ask you to go to the quiz and answer a few questions. We can discusss common difficulties at the end of the session.
 
@@ -52,13 +52,15 @@ You can test if everything is installed correctly by running:
 
 At this point you can have a look at the individual observations that are available for fitting.  
 You find them in the 'Observations' folder. 
-Look at the images and try to answer the first four questions of the [quiz](https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+Look at the images and try to answer the first four questions of the [quiz](https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton){:target="_blank"}.
 
 ### Running a retrieval
 
+We will start by fitting the CO2_only observation, since it should be the fastest (1min 7sec on my machine, let's see if you can beat this..).
+
 A single command will start the retrieval (hopefully).
-Before you execute it have a look at the input file that is used (found in ...).
-Try to understand what the individual lines in the input files are doing and answering the following questions:
+Before you execute it have a look at the input file that is used (found in the 'Input_files' folder).
+Try to understand what the individual lines in the input files are doing and answering the next questions of the [quiz](https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton){:target="_blank"}:
 
 - What distance to the object is used for the fitting?
 - Which parameters are fixed during the fitting?
@@ -80,23 +82,18 @@ In the meanwhile you can add your email address to ... if you want to be include
 
 When the retrieval finished you can plot the results using the following command:
 
-`python retrieval-input.py ./Input_files/example1 all`
+`python retrieval-input.py ./Input_files/example1 all reduce_post 1000`
 
-This can again take a little while.  
+The all argument means that all three plotting rountines are executed. The reduce_post 1000 argument means that we are not analysing the full posterior but only draw 1000 random points. This is only done for this tutorial to increase the computational speed.  
+
+The programms can take a little while. Depending on your machine figures might pop up during the run. Make sure to close them otherwise the programm stays interupted.
 
 Afterwards there should be a folder called './Output/example1/figures'.  
 Open this folder and explore the figures that where created.  
-Use them to answer the following questions:
-
-- How large are the deviations between model posterior and observation (estimate based on figure)?
-- What is the dominant dust species that has been retrieved?
-- What temperatures have been retrieved for H2O?
-- What column densities have been retrieved for H2O?
-- What molecule is causing the features at ...?
-- Which molecule is emitting at smaller radii (CO2 or H2O)?
+Use them to answer the next questions on the [quiz](https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton){:target="_blank"}:
 
 If you made it this far, **congratulations**!!!  
-Feel free to continue playing around by changing things in the input file and exploring the effect on the fit.  
+Feel free to continue playing around by changing things in the input file and exploring the effect on the fit. Make sure to change the run_number if you are starting a new run.
 
 The optional things I planed are listed below.
 
