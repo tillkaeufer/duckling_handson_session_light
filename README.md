@@ -73,7 +73,7 @@ Try to understand what the individual lines in the input files are doing and ans
 If you feel comfortable with the file let's run a retrieval.  
 For doing so, make your that you are in the 'duckling_hands-on_session' folder and run the following command:
 
-`python retrieval-input.py ./Input_files/input_co2_only.txt`
+`python retrieval-input.py ./Input_files/input_file_co2_only.txt`
 
 Now you to be a bit patient depending on your machine.  
 The output of your terminal shows the progress of the fitting. A guide on the meaning can be found on the [ultranest page](https://johannesbuchner.github.io/UltraNest/issues.html#what-does-the-live-point-display-mean).
