@@ -1,3 +1,13 @@
+#----------------------------
+#----------------------------
+# If you are running the code on Windows
+# you have to execute this scripts first
+# additionally you have to set parallel = False
+# in the plot_retrieval_results.py script
+# also you have to add the close option to the plotting command
+#----------------------------
+#----------------------------
+
 import re
 
 def replace_slashes_in_file(file_path, reverse=False):
@@ -11,7 +21,7 @@ def replace_slashes_in_file(file_path, reverse=False):
         for line in lines:
             def replace_slashes(match):
                 string_content = match.group(2)
-                if '\\r' in string_content or 'np.round' in string_content:
+                if '\\r' in string_content or 'np.round' in string_content or '$' in string_content:
                     return match.group(0)
                 if reverse:
                     string_content = string_content.replace('\\', '/')
