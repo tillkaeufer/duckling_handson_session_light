@@ -18,7 +18,8 @@ def replace_slashes_in_file(file_path, reverse=False):
                 else:
                     string_content = string_content.replace('/', '\\\\')
                 return f'{match.group(1)}{string_content}{match.group(3)}'
-
+            if 'os.system' in line and 'date' in line:
+                new_line = ''
             new_line = string_pattern.sub(replace_slashes, line)
             new_line = cp_pattern.sub('copy ', new_line)
             file.write(new_line)
@@ -40,3 +41,5 @@ if __name__ == "__main__":
     ]
     reverse_option = False  # Set to True if you want to reverse the slashes
     process_files(files_to_process, reverse_option)
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
