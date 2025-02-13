@@ -75,22 +75,22 @@ fixed_paras=True
 fixed_dict={'tstar':9000,
             'rstar':2.5, 
             'distance':140, 
-            'incl':0.0} 
+            'incl':0.0,
+            't_rim':1500.6,
+            'tmin_s':50.3,
+            'tmax_s':1000.1,
+            'tmin_mp':99.3,
+            'tmax_mp':1100.4,
+            'q_thin':-0.55,
+            'q_emis':-0.55
+            } 
 
 # -----------------------------
 # Priors
 # -----------------------------
 
 
-prior_dict={
-            't_rim': [800,1600],
-            'tmin_s': [10,200],
-            'tmax_s': [800,1300],
-            'tmin_mp': [10,200],
-            'tmax_mp': [800,1600],
-            'q_mid': [-1,-0.1],
-            'q_thin': [-1,-0.1],
-            'q_emis':[-1,-0.1],
+prior_dict={'q_mid':[-1,-0.1],
             'log_sigma_obs':[-4,-1]}
 
 
@@ -154,5 +154,6 @@ fast_retrival=True #accuracy setting of multinest
 n_live_points = 400 # for multinest and ultranest
 evidence_tolerance = 5 # for multinest and ultranest
 #sampling_efficiency = 0.3 # for multinest
-frac_remain= 0.5 # for ultranest
+frac_remain= 0.01 # for ultranest
+dlogz=2.0 # for ultranest
 

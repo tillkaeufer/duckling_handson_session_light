@@ -4,7 +4,7 @@
 bayesian_folder='./Output/' #folder in which the output of this program should be saved
 dust_path='./Q-curves/fitting-Qcurves/Q_GRF/'    #path to the dust data
 
-subfold='co2_only/' #subfolder where the retrieval run is saved
+subfold='full_range/' #subfolder where the retrieval run is saved
 
 
 slab_folder='./LineData/' # folder where the slab grids are saved
@@ -75,7 +75,14 @@ fixed_paras=True
 fixed_dict={'tstar':9000,
             'rstar':2.5, 
             'distance':140, 
-            'incl':0.0} 
+            'incl':0.0,
+            't_rim':1500.6,
+            'tmin_s':50.3,
+            'tmax_s':1000.1,
+            'tmin_mp':99.3,
+            'q_thin':-0.55,
+            'q_emis':-0.55
+            } 
 
 # -----------------------------
 # Priors
@@ -83,21 +90,17 @@ fixed_dict={'tstar':9000,
 
 
 prior_dict={
-            't_rim': [800,1600],
-            'tmin_s': [10,200],
-            'tmax_s': [800,1300],
-            'tmin_mp': [10,200],
             'tmax_mp': [800,1600],
             'q_mid': [-1,-0.1],
-            'q_thin': [-1,-0.1],
-            'q_emis':[-1,-0.1],
             'log_sigma_obs':[-4,-1]}
 
 
 log_coldens=True
-slab_prior_dict={                
-           'CO2':{'ColDens':[15.00,18.00], #CO2 will be retrieved with a constant column density
-                    'temis':[200,800], # and a constant temperature
+slab_prior_dict={    
+           'H2O':{'ColDens_tmax':[15.00,18.00], #H2O will be retrieved with a column density power law
+                  'ColDens_tmin':[15.00,18.00], 
+                    'tmax':[200,800], # and a temperature power law
+                    'tmin':[200,800]
                     }
 
 }
@@ -117,8 +120,8 @@ scale_prior={'sc_ir':[-5,0],
 # -----------------------------
 
 import numpy as np
-lam_obs=np.load('./Observations/co2_only_wave.npy')
-flux_obs=np.load('./Observations/co2_only_flux.npy')
+lam_obs=np.load('./Observations/full_range_wave.npy')
+flux_obs=np.load('./Observations/full_range_flux.npy')
 
 
 
