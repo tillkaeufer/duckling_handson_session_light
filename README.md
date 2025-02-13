@@ -4,13 +4,11 @@ Below you find the step by step instructions on how to run this session.
 
 During this project you will fit a mock observation that was created by DuCKLinG.
 
-The goal is to answer the following questions:
-- Which molecules are included in the fitting?
-- How would you add another molecule?
-- How would you change the prior ranges?
-- What dust composition is retrieved?
-- What molecular conditions are retrieved?
-- How much noise was added to the mock observation?
+The goal is to answer a few questions during the process.
+
+The quiz can be accessed using the following link: https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+At different steps during this tutorial, I'll ask you to go to the quiz and answer a few questions. We can discusss common difficulties at the end of the session.
 
 ## Steps
 
@@ -34,7 +32,7 @@ If you do this you need to unpack your zip file.
 Since the slab grids are part of this repository, it has a size of a few hundred megabits. 
 Make sure you have a good internet connection when downloading.
 
-At the end of this step you should have somewhere a folder called 'duckling_hand-on_session'.
+At the end of this step you should have somewhere a folder called 'duckling_hands-on_session'.
 
 ### Installation
 We will be working in a Python 3 environment and need a few python packages.
@@ -52,6 +50,9 @@ You can test if everything is installed correctly by running:
 
 ### Exploring the observations
 
+At this point you can have a look at the individual observations that are available for fitting.  
+You find them in the 'Observations' folder. 
+Look at the images and try to answer the first four questions of the [quiz](https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
 
 ### Running a retrieval
 
