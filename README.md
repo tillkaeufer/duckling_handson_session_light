@@ -37,6 +37,8 @@ Make sure you have a good internet connection when downloading.
 
 At the end of this step you should have somewhere a folder called 'duckling_hands-on_session'.
 
+Can you lastly go into the LineData folder and create a subfolder called binned_data, please.
+
 ### Installation
 We will be working in a Python 3 environment and need a few python packages.
 First, make sure that you have python 3 running. If you are using conda and want to create a new environment you can do this with the follwoing command:
