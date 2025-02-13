@@ -18,6 +18,7 @@ These steps guide you through the tutorial. A more detailed explanation is given
 
 - Downloading the data
 - Installation
+- Exploring the observations
 - Running a retrieval
 - Plotting the retrieval results
 - Creating new input files and exploring the effects (optional)
@@ -25,21 +26,32 @@ These steps guide you through the tutorial. A more detailed explanation is given
 ## Detailed explanation of the individual steps
 
 ### Downloading the data
-Clone this repository `git clone https://github.com/tillkaeufer/Ringberg_duckling_session`.
+Clone this repository `git clone https://github.com/tillkaeufer/duckling_hands-on_session`.
 
 Alternitavely, you can click on the green 'code' botton on the top right and then on 'download zip'.
 If you do this you need to unpack your zip file.
 
-At the end of this step you should have somewhere a folder called 'Ringberg_duckling_session'.
+Since the slab grids are part of this repository, it has a size of a few hundred megabits. 
+Make sure you have a good internet connection when downloading.
+
+At the end of this step you should have somewhere a folder called 'duckling_hand-on_session'.
 
 ### Installation
 We will be working in a Python 3 environment and need a few python packages.
-First, make sure that you have python 3 running.
-Second, go in the terminal to the 'Ringberg_duckling_session' folder and run the following command:
-`python install -rrequirements.txt` 
+First, make sure that you have python 3 running. If you are using conda and want to create a new environment you can do this with the follwoing command:
+`conda create --name duckling_handson python=3.9`  
+`conda activate duckling_handson`
+
+Second, go in the terminal to the 'duckling_hands-on_session' folder and run the following command:
+`pip install -r requirements.txt` 
 
 This should hopefully install a bunch of packages.
-If you have any problems with individual packages...
+
+You can test if everything is installed correctly by running:
+`python test_installation.py` 
+
+### Exploring the observations
+
 
 ### Running a retrieval
 
