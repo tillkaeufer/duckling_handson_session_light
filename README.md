@@ -1,5 +1,8 @@
 # DuCKLinG hands-on session
 
+
+<img src="./DuCKLinG_logo.png" width="150" />
+
 Below you find the step by step instructions on how to run this session.  
 
 During this project you will fit a mock observation that was created by DuCKLinG.
