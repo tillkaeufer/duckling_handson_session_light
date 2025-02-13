@@ -86,7 +86,7 @@ One the fitting is done you can proceed to the plotting of the results.
 
 When the retrieval finished you can plot the results using the following command:
 
-`python retrieval-input.py ./Input_files/input_file_co2_only.txt all reduce_post 1000`
+`python plot_retrieval_results.py ./Input_files/input_file_co2_only.txt all reduce_post 1000`
 
 The 'all' argument means that all three plotting rountines are executed. The 'reduce_post 1000' argument means that we are not analysing the full posterior but only draw 1000 random points from it. This is only done for this tutorial to increase the computational speed.  
 
