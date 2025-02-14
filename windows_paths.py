@@ -51,5 +51,4 @@ if __name__ == "__main__":
     ]
     reverse_option = False  # Set to True if you want to reverse the slashes
     process_files(files_to_process, reverse_option)
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
+    print('Finished processing files')

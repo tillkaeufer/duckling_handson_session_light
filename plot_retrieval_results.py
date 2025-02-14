@@ -1533,7 +1533,7 @@ else:
         if parallel:
             dict_flux,samp,dust_mass_ar,dust_mass_absorp_ar=results[i].get()
         else:
-            dict_flux,samp,dust_mass_ar,dust_mass_absorp_ar=np.array(results,dtype='object')[i,0],np.array(results,dtype='object')[i,1].flatten(),np.array(results,dtype='object')[i,2].flatten(),np.array(results,dtype='object')[i,3].flatten()
+            dict_flux,samp,dust_mass_ar,dust_mass_absorp_ar=np.array(results,dtype='object')[i,0],np.array(results,dtype='object')[i,1].flatten(),np.array(results,dtype='object')[i,2],np.array(results,dtype='object')[i,3]
         if plot_dust_individual:
             if use_dust_emis:
                 for key in dict_flux['individual_surface']:
