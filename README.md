@@ -68,17 +68,20 @@ Look at the images and try to answer the first four questions of the [quiz](http
 We will start by fitting the CO2_only observation, since it should be the fastest (1min 7sec on my machine, let's see if you can beat this..).
 
 A single command will start the retrieval (hopefully).
-Before you execute it have a look at the input file that is used (found in the 'Input_files' folder).
-Try to understand what the individual lines in the input files are doing and answering the next questions of the [quiz](https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
-
   
-If you feel comfortable with the file let's run a retrieval.  
 For doing so, make your that you are in the 'duckling_hands-on_session' folder and run the following command:
 
 `python retrieval-input.py ./Input_files/input_file_co2_only.txt`
 
+
 Now you to be a bit patient depending on your machine.  
 The output of your terminal shows the progress of the fitting. A guide on the meaning can be found on the [ultranest page](https://johannesbuchner.github.io/UltraNest/issues.html#what-does-the-live-point-display-mean).
+
+While you are waiting for the run to finish have a look at the input file that is used (found in the 'Input_files' folder).
+Try to understand what the individual lines in the input files are doing and answering the next questions of the [quiz](https://www.canva.com/design/DAGe7S1YAoM/UEEmq63JZn2cyPYtBioAJQ/edit?utm_content=DAGe7S1YAoM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+The README file in the 'Input_files' folder can help you to understand the parameter syntax.
+
+
 
 One the fitting is done you can proceed to the plotting of the results.
 
