@@ -5,7 +5,7 @@
 
 Below you find the step by step instructions on how to run this session.  
 
-During this project you will fit a mock observation that was created by DuCKLinG.
+During this project you will fit a mock observation that was created by DuCKLinG ([Kaeufer et al. 2024](https://www.aanda.org/articles/aa/pdf/2024/07/aa49936-24.pdf)).
 
 The goal is to answer a few questions during the process.
 
