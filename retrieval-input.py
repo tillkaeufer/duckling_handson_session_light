@@ -1108,7 +1108,7 @@ if __name__ == "__main__":
             log_dir=prefix,
             resume=True)
             
-            result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain)
+            result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain,dlogz=dlogz)
         else:
             result = solve(LogLikelihood=loglike_ratios, Prior=prior_fast, 
                n_dims=len(upper_lim), outputfiles_basename=prefix, verbose=True,
@@ -1125,7 +1125,7 @@ if __name__ == "__main__":
             log_dir=prefix,
             resume=True)
             
-            result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain)
+            result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain,dlogz=dlogz)
         else:
             result = solve(LogLikelihood=loglike_gas, Prior=prior_fast, 
                n_dims=len(upper_lim), outputfiles_basename=prefix, verbose=True,
@@ -1143,7 +1143,7 @@ if __name__ == "__main__":
                     prior_fast,
                     log_dir=prefix,
                     resume=True)
-                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain)
+                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain,dlogz=dlogz)
         
             if slice_sampler:
                 nsteps = length_ultra * len(complete_header)
@@ -1161,7 +1161,7 @@ if __name__ == "__main__":
                     # max_nsteps=400
                 )
                 print(np.shape(sampler))
-                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain)
+                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain,dlogz=dlogz)
 
                 
             sampler.print_results()
