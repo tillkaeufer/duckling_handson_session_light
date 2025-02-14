@@ -29,7 +29,7 @@ These steps guide you through the tutorial. A more detailed explanation is given
 ### Downloading the data
 Clone this repository `git clone https://github.com/tillkaeufer/duckling_hands-on_session`.
 
-Alternitavely, you can click on the green 'code' botton on the top right and then on 'download zip'.
+Alternatively, you can click on the green 'code' button on the top right and then on 'download zip'.
 If you do this you need to unpack your zip file.
 
 Since the slab grids are part of this repository, it has a size of a few hundred megabits. 
