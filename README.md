@@ -5,7 +5,7 @@
 
 Below you find the step by step instructions on how to run this session.  
 
-During this project you will fit a mock observation that was created by DuCKLinG ([Kaeufer et al. 2024](https://www.aanda.org/articles/aa/pdf/2024/07/aa49936-24.pdf)).
+During this project you will fit a mock observation with DuCKLinG ([Kaeufer et al. 2024](https://www.aanda.org/articles/aa/pdf/2024/07/aa49936-24.pdf)).
 
 The goal is to answer a few questions during the process.
 
@@ -57,7 +57,7 @@ You can test if everything is installed correctly by running:
 
 `python test_installation.py` 
 
-If you are having a working version of MultiNest on your machine you can also run 'pip install pymultinest' and set use_ultranest=False in the input files for the retrieval.  
+If you are having a working version of MultiNest on your machine you can also run `pip install pymultinest` and set use_ultranest=False in the input files for the retrieval.  
 This will result in MultiNest instead of Ultranest being used for the retrieval, which is typically (for the examples displayed here) much faster.
 
 ### Exploring the observations
@@ -108,16 +108,37 @@ The full DuCKLinG model can be found in another [github repository](https://gith
 
 The optional things I planed are listed below.
 
-### Optional next steps
+## Optional next steps
 
 Feel free to continue playing around by changing things in the input file and exploring the effect on the fit. Make sure to change the run_number if you are starting a new run.
 
-#### How to model dust absorption features?
+### Examining the forward model
 
-#### How many water components where used here?
+If you are interested in the forward model you can have a look at the 'forward_model.ipynb' jupyter notebook.
+Make sure to install jupyter first via:  
+`pip install notebook`  
+and start the notebook by typing:
+`jupyter notebook`  
+Then navigate to the 'forward_model.ipynb' and open it.  
+You can then explore the model, change parameters to observe their effect, and examine the properties that can be extracted from the model.
 
-##### How to model gas absorption features?
 
-##### Fitting the continuum subtracted spectrum
+### More retrievals
+
+After fitting a limited wavelength range with a single molecule. You can have a look at two other examples that can be found in the same Observations folder. 
+- Short_range: This mock observation covers the same wavelength range as CO2_only but includes three more molecules. All of them are retrieved simultaneously. To run this retrieval run the same commands as above but replace the name of the input file with the './Input_files/input_file_short_range.txt'
+- Full_range: This observations contains the water spectrum fron 5 microns to 20 microns. Therefore, it is an ideal case to retrieve the dust and gas properties simultaneously. To run this retrieval run the same commands as above but replace the name of the input file with the './Input_files/input_file_full_range.txt'
+
+### Different classes of retrievals
+
+DuCKLinG can be run in different modes. This includes:
+- Modelling dust absorption features
+- Modelling gas absorption features
+- Retrievals on continuum subtracted spectra (running the gas component only)
+
+For all of these modes one example retrieval is placed in the repository.  
+You find the mock observations in 'Observations/Addtional_examples', with the input files being placed in 'Input_files/Additional_input_files'.  
+Feel free to run any of these examples but be aware that they might take longer than the original tutorial.
+
 
 
