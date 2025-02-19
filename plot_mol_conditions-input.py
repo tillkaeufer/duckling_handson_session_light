@@ -54,7 +54,7 @@ plt.rcParams['font.size'] = 12
 print('Load inputs...')
 
 
-closing=True
+close_plots=True
 
 temp_range=[25,1500]
 coldens_range=[14,24]
@@ -99,7 +99,7 @@ if __name__ == "__main__":
             elif argument=='npoints':
                 npoints_per_model=int(arg_list[i+1])  
             elif argument=='close':
-                closing=True
+                close_plots=True
             elif argument=='reduce_post':
                 reduce_posterior=True
                 
@@ -355,7 +355,7 @@ else:
     plt.xlim([temp_range[0],temp_range[1]]) 
 plt.savefig(prefix_fig+'_molecular_conditions.pdf',bbox_inches='tight')
 
-if closing:
+if close_plots:
     plt.close()
 else:
     plt.show()
@@ -556,7 +556,7 @@ else:
     plt.legend(custom_lines,custom_labels,loc=(-0.1,1.05),ncol=max(len(custom_lines)//2,1))
         
     plt.savefig(prefix_fig+'_molecular_contidions_radius.pdf',bbox_inches='tight')
-    if closing:
+    if close_plots:
         plt.close()
     else:
         plt.show()

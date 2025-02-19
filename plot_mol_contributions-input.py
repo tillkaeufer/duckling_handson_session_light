@@ -65,6 +65,10 @@ if __name__ == "__main__":
                 complete_header=False
             elif argument=='simple':
                 complete_header=False
+            if argument=='close':
+                close_plots=True
+            if argument=='open':
+                close_plots=False
 
 
 # %%
@@ -746,7 +750,9 @@ else:
                 i+=1
 
 # %%
-mol_data=con_model.extract_emission_quantities(low_contribution=0.15,high_contribution=0.85,debug=True)
+
+mol_data=con_model.extract_emission_quantities(low_contribution=0.15,high_contribution=0.85,debug=True,close_plots=close_plots)
+
 
 # %%
 
@@ -757,7 +763,7 @@ con_model.read_data(variables=var_dict,dust_species=abundance_dict,
                     dust_path=dust_path,slab_folder=slab_folder,ext_model=ext_model)
 
 # %%
-con_model.plot_radial_structure(ylog=False)
+con_model.plot_radial_structure(ylog=False,close_plots=close_plots)
 
 # %%
 emission_flux_individual_scaled={}
@@ -853,7 +859,10 @@ def plot_molecule_minds_like(interp_flux,mol_fluxes,flux_obs=flux_obs,lam_obs=la
     plt.xlabel('$\lambda [\mathrm{\mu m}]$')
     if save_name!='':
         plt.savefig(save_name,bbox_inches='tight')
-    plt.show()
+    if close_plots:
+        plt.close()
+    else:
+        plt.show()
     plt.figure(figsize=(12,4))
     plt.step(lam_obs,residual*1000,linewidth=0.5,color='black',zorder=101)
     added_mol_flux=np.zeros_like(mol_fluxes[key])
@@ -881,13 +890,19 @@ def plot_molecule_minds_like(interp_flux,mol_fluxes,flux_obs=flux_obs,lam_obs=la
     plt.legend(loc=(0,1),ncol=max(1,len(list(mol_fluxes.keys()))//2)).set_zorder(102)
     plt.ylabel('$F \, [\mathrm{mJy}]$')
     plt.xlabel('$\lambda [\mathrm{\mu m}]$')
-    plt.show()
+    if close_plots:
+        plt.close()
+    else:
+        plt.show()
     plt.figure(figsize=(12,4))
     plt.step(lam_obs,(flux_obs-(interp_flux))*1000,linewidth=0.5,color='black')
     plt.xlim(wave_range)
     plt.ylabel('$\Delta F \, [\mathrm{mJy}]$')
     plt.xlabel('$\lambda [\mathrm{\mu m}]$')
-    plt.show()
+    if close_plots:
+        plt.close()
+    else:
+        plt.show()
     plt.figure(figsize=(12,4))
     plt.step(lam_obs,(flux_obs-(interp_flux))/(interp_flux)*100,linewidth=0.5,color='black')
     plt.axhline(0,linewidth=0.5,color='tab:blue')

@@ -2489,7 +2489,11 @@ def plot_histograms(dust_analysis,scale='linear',suffix='',indicate_regions=True
     else:
         plt.savefig(f'{save_folder}{str(run_number)}_histogram_mass_fractions{suffix}.{filetype_fig}',bbox_inches='tight')
         
-    plt.show()
+    if close_plots:
+        plt.close()
+    else:
+
+        plt.show()
 
 
 
@@ -2606,7 +2610,11 @@ def plot_histograms_abs(dust_analysis_abs,scale='linear',suffix='',indicate_regi
     else:
         plt.savefig(f'{save_folder}{str(run_number)}_histogram_mass_abs{suffix}.{filetype_fig}',bbox_inches='tight')
         
-    plt.show()
+    if close_plots:
+        plt.close()
+    else:
+
+        plt.show()
 
 
 
@@ -3147,14 +3155,17 @@ print('Done!!')
 if run_all:
     print('Starting the other plotting routines')
     print('Starting plot_mol_conditions-input.py')
+    arg_list_pass_on=''
+    if close_plots:
+        arg_list_pass_on+=' close'
     if reduce_posterior:
-        os.system(f'python plot_mol_conditions-input.py {input_file} reduce_post')
+        os.system(f'python plot_mol_conditions-input.py {input_file} reduce_post {arg_list_pass_on}')
     else:
-        os.system(f'python plot_mol_conditions-input.py {input_file}')
+        os.system(f'python plot_mol_conditions-input.py {input_file} {arg_list_pass_on}')
     print('Starting plot_mol_contributions-input.py ')
     if reduce_posterior:
-        os.system(f'python plot_mol_contributions-input.py  {input_file} simple')
+        os.system(f'python plot_mol_contributions-input.py  {input_file} simple {arg_list_pass_on}')
 
     else:
-        os.system(f'python plot_mol_contributions-input.py  {input_file}')
+        os.system(f'python plot_mol_contributions-input.py  {input_file} {arg_list_pass_on}')
 print('Finished!!')
