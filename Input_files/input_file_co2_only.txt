@@ -143,3 +143,4 @@ evidence_tolerance = 5 # for multinest and ultranest
 #sampling_efficiency = 0.3 # for multinest
 frac_remain= 0.01 # for ultranest
 dlogz=2.0 # for ultranest
+dKL=2.0 # for ultranest
