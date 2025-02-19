@@ -1059,6 +1059,13 @@ if use_ultranest:
         print('dlogz  not set')
         dlogz=0.5
         print('Default is 0.5') 
+    try:
+        dKL
+        print('dKL')    
+    except:
+        print('dKL not set')
+        dKL=0.5
+        print('Default is 0.5')
         
 
 else:
@@ -1108,7 +1115,8 @@ if __name__ == "__main__":
             log_dir=prefix,
             resume=True)
             
-            result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain,dlogz=dlogz)
+            result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,
+                                 frac_remain=frac_remain,dlogz=dlogz,dKL=dKL)
         else:
             result = solve(LogLikelihood=loglike_ratios, Prior=prior_fast, 
                n_dims=len(upper_lim), outputfiles_basename=prefix, verbose=True,
@@ -1117,15 +1125,36 @@ if __name__ == "__main__":
 
     elif fit_gas_only:
         if use_ultranest:
-
-            sampler = ultranest.ReactiveNestedSampler(
-            complete_header,
-            loglike_gas,
-            prior_fast,
-            log_dir=prefix,
-            resume=True)
+            if not slice_sampler:
             
-            result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain,dlogz=dlogz)
+                sampler = ReactiveNestedSampler(
+                        complete_header,
+                        loglike_gas,
+                        prior_fast,
+                        log_dir=prefix,
+                        resume=True)
+                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,
+                                     frac_remain=frac_remain,dlogz=dlogz,dKL=dKL)
+        
+            if slice_sampler:
+                nsteps = length_ultra * len(complete_header)
+                sampler = ReactiveNestedSampler(
+                    complete_header,
+                    loglike_gas,
+                    prior_fast,
+                    log_dir=prefix,
+                    resume=True)
+                # create step sampler:
+                sampler.stepsampler = SliceSampler(
+                    nsteps=nsteps,
+                    generate_direction=ultranest.stepsampler.generate_mixture_random_direction,
+                    adaptive_nsteps=adaptive_nsteps,
+
+                )
+                print(np.shape(sampler))
+                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,
+                                     frac_remain=frac_remain,dlogz=dlogz,dKL=dKL)
+
         else:
             result = solve(LogLikelihood=loglike_gas, Prior=prior_fast, 
                n_dims=len(upper_lim), outputfiles_basename=prefix, verbose=True,
@@ -1143,7 +1172,8 @@ if __name__ == "__main__":
                     prior_fast,
                     log_dir=prefix,
                     resume=True)
-                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain,dlogz=dlogz)
+                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,
+                                     frac_remain=frac_remain,dlogz=dlogz,dKL=dKL)
         
             if slice_sampler:
                 nsteps = length_ultra * len(complete_header)
@@ -1161,7 +1191,8 @@ if __name__ == "__main__":
                     # max_nsteps=400
                 )
                 print(np.shape(sampler))
-                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,frac_remain=frac_remain,dlogz=dlogz)
+                result = sampler.run(min_num_live_points=n_live_points,Lepsilon=evidence_tolerance,
+                                     frac_remain=frac_remain,dlogz=dlogz,dKL=dKL)
 
                 
             sampler.print_results()

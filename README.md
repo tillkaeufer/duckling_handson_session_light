@@ -57,6 +57,9 @@ You can test if everything is installed correctly by running:
 
 `python test_installation.py` 
 
+If you are having a working version of MultiNest on your machine you can also run 'pip install pymultinest' and set use_ultranest=False in the input files for the retrieval.  
+This will result in MultiNest instead of Ultranest being used for the retrieval, which is typically (for the examples displayed here) much faster.
+
 ### Exploring the observations
 
 At this point you can have a look at the individual observations that are available for fitting.  
