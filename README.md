@@ -22,7 +22,8 @@ These steps guide you through the tutorial. A more detailed explanation is given
 - Exploring the observations
 - Running a retrieval
 - Plotting the retrieval results
-- Creating new input files and exploring the effects (optional)
+- Exploring the model (optional)
+- Other retrievals (optional)
 
 ## Detailed explanation of the individual steps
 
@@ -36,8 +37,6 @@ Since the slab grids are part of this repository, it has a size of a few hundred
 Make sure you have a good internet connection when downloading.
 
 At the end of this step you should have somewhere a folder called 'duckling_hands-on_session'.
-
-Can you lastly go into the LineData folder and create a subfolder called binned_data, please.
 
 ### Installation
 We will be working in a Python 3 environment and need a few python packages.

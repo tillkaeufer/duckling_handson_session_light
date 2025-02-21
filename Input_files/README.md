@@ -9,6 +9,8 @@
 | rstar             | Stellar radius (R_sun)                                                                  | Star      |               |
 | bb_star           | Should a black body be used for the star, otherwise a stellar spectrum has be to loaded | Star      | True, False   |
 | incl              | Inclination of the system                                                               |           | (0.0,90.0)    |
+| E(B-V)            | First extinction parameter                                                              |           | (0.1,0.9)     |
+| Rv                | Second extinction parameter                                                             |           | (3.0,4.0)     |
 | **Uncertainty**   |                                                                                         |           |               |
 | sigma_obs         | Observational uncertainty as a factor of flux                                           |           |               |
 | log_sigma_obs     | Observational uncertainty as a factor of flux (log scale)                               |           | (-5,-1)       |
