@@ -28,7 +28,7 @@ These steps guide you through the tutorial. A more detailed explanation is given
 ## Detailed explanation of the individual steps
 
 ### Downloading the data
-Clone this repository `git clone https://github.com/tillkaeufer/duckling_hands-on_session`.
+Clone this repository `git clone https://github.com/tillkaeufer/duckling_hands-on_session_light`.
 
 Alternatively, you can click on the green 'code' button on the top right and then on 'download zip'.
 If you do this you need to unpack your zip file.
@@ -36,7 +36,7 @@ If you do this you need to unpack your zip file.
 Since the slab grids are part of this repository, it has a size of a few hundred megabits. 
 Make sure you have a good internet connection when downloading.
 
-At the end of this step you should have somewhere a folder called 'duckling_hands-on_session'.
+At the end of this step you should have somewhere a folder called 'duckling_hands-on_session_light'.
 
 ### Installation
 We will be working in a Python 3 environment and need a few python packages.
@@ -71,7 +71,7 @@ We will start by fitting the CO2_only observation, since it should be the fastes
 
 A single command will start the retrieval (hopefully).
   
-For doing so, make your that you are in the 'duckling_hands-on_session' folder and run the following command:
+For doing so, make your that you are in the 'duckling_hands-on_session_light' folder and run the following command:
 
 `python retrieval-input.py ./Input_files/input_file_co2_only.txt`
 
@@ -124,20 +124,4 @@ You can then explore the model, change parameters to observe their effect, and e
 
 ### More retrievals
 
-After fitting a limited wavelength range with a single molecule. You can have a look at two other examples that can be found in the same Observations folder. 
-- Short_range: This mock observation covers the same wavelength range as CO2_only but includes three more molecules. All of them are retrieved simultaneously. To run this retrieval run the same commands as above but replace the name of the input file with the './Input_files/input_file_short_range.txt'
-- Full_range: This observations contains the water spectrum fron 5 microns to 20 microns. Therefore, it is an ideal case to retrieve the dust and gas properties simultaneously. To run this retrieval run the same commands as above but replace the name of the input file with the './Input_files/input_file_full_range.txt'
-
-### Different classes of retrievals
-
-DuCKLinG can be run in different modes. This includes:
-- Modelling dust absorption features
-- Modelling gas absorption features
-- Retrievals on continuum subtracted spectra (running the gas component only)
-
-For all of these modes one example retrieval is placed in the repository.  
-You find the mock observations in 'Observations/Addtional_examples', with the input files being placed in 'Input_files/Additional_input_files'.  
-Feel free to run any of these examples but be aware that they might take longer than the original tutorial.
-
-
-
+To run the other examples you need to download the (full repository)[https://github.com/tillkaeufer/duckling_hands-on_session]
