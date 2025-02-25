@@ -124,4 +124,4 @@ You can then explore the model, change parameters to observe their effect, and e
 
 ### More retrievals
 
-To run the other examples you need to download the (full repository)[https://github.com/tillkaeufer/duckling_hands-on_session]
+To run the other examples you need to download the [full repository](https://github.com/tillkaeufer/duckling_hands-on_session).
